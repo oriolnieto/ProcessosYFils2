@@ -1,6 +1,6 @@
 package n_parells_4;
 
-public class FilParells {
+public class FilParells extends Thread {
 
     private int [] vector;
     private int inici;
@@ -11,8 +11,9 @@ public class FilParells {
         this.vector = vector;
         this.inici = inici;
         this.fi = fi;
-        this.answer = answer;
+        this.answer = 0;
     }
+
 
     public int[] getVector() {
         return vector;
