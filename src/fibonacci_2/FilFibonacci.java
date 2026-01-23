@@ -32,7 +32,7 @@ public class FilFibonacci implements  Runnable {
                 a = b; // igualamos el valor que habia en b para a
                 b = c; // igualamos el valor de c en b, que sera la suma que hemos echo previamente, y asi sucesivamente
             }
-            resultat = b;
+            resultat = a;
         }
     }
 }
