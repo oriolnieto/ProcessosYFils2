@@ -21,7 +21,7 @@ public class fibonaccis_2 {
 
         for (int i = 0; i < fil; i++) {
             try {
-                fils[i].join(); // s'ha de fer el join apart perque si n'ho es fa tot sincronitzat es a dir, es fa de forma secuencial,
+                fils[i].join(); // s'ha de fer el join apart perque si n'ho es fa tot sincronitzat es a dir, es fa de forma secuencial, ademés de que ho necessitem per a que acabi cada fil el seu calcul de fibonacci i no peti
             } catch (InterruptedException e) {
                 System.out.println("Error fent el Join!");
             }
