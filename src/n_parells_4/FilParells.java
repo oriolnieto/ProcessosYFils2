@@ -7,11 +7,20 @@ public class FilParells extends Thread {
     private int fi;
     private int answer;
 
-    public FilParells(int[] vector , int inici, int fi, int answer) {
+    public FilParells(int[] vector , int inici, int fi) {
         this.vector = vector;
         this.inici = inici;
         this.fi = fi;
         this.answer = 0;
+    }
+
+    @Override
+    public void run() {
+        for(int i=0;i<vector.length;i++){
+            if ((vector[i] / 2) * 2 == vector[i]) {
+                answer++;
+            }
+        }
     }
 
 
