@@ -9,7 +9,7 @@ public class primers_5 {
         Scanner scan = new Scanner(System.in);
 
         int num = 0;
-        int contador = 1;
+        int contador = 0;
 
         while (num != -1) {
             System.out.println("Escriu un numero:");

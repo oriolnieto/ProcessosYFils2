@@ -3,13 +3,13 @@ package primer_5;
 public class FilPrimer implements Runnable {
 
     private int numero;
-    private int resultat;
+    private String resultat;
 
-    public int getResultat() {
+    public String getResultat() {
         return resultat;
     }
 
-    public void setResultat(int resultat) {
+    public void setResultat(String resultat) {
         this.resultat = resultat;
     }
 
@@ -19,15 +19,23 @@ public class FilPrimer implements Runnable {
 
     @Override
     public void run() {
+        if (esPrimer(numero)) {
+            resultat = numero + " es prim.";
+        }
+        else {
+            resultat = numero + " no es prim.";
+            }
+    }
 
-        if (numero%2==0) {
+    private boolean esPrimer(int numero) {
+        if (numero <= 1) {
             return false;
         }
-
-        for(int i=3;i*i<=n;i+=2) {
-            if(n%i==0)
+        for (int i = 2; i < numero; i++) {
+            if (numero % i == 0) {
                 return false;
+            }
         }
-            return true;
+        return true;
     }
 }
