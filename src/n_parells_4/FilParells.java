@@ -1,5 +1,7 @@
 package n_parells_4;
 
+// Classe objecte de la classe de fils/nombres parells de l'activitat 4
+
 public class FilParells extends Thread {
 
     private int [] vector;
@@ -14,9 +16,14 @@ public class FilParells extends Thread {
         this.answer = 0;
     }
 
+    // el métode run() del fil es sobrescriu en un bucle for on la posició marca l'inici
+    // i finalitzarà el bucle quan la posició i sigui inferior al final de la geometria en el espai, la posició i incrementa
+    // mitjançant un condicional si el vector en la posició i es divideix entre 2 i es multiplica per 2,
+    // indica notablement que el vector en la posició i despres de la operació no hi dona un nombre que no sigui parell ja que no hi ha residu.
+    // es tanca el condicional i el bucle quan despres de la condició la resposta incrementa ja que es tracta d'un comptador.
     @Override
     public void run() {
-        for(int i=0;i<vector.length;i++){
+        for(int i=inici;i<fi;i++){
             if ((vector[i] / 2) * 2 == vector[i]) {
                 answer++;
             }
