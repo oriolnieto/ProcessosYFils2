@@ -1,5 +1,9 @@
 package vectors_3;
 
+
+// Classe objecte del fil, aquesta classe es compón de l'objecte de cada fil amb els seus atributs corresponents, on el seu id és un comptador amb increment
+// Amb els seus setters i getters corresponents
+
 public class FilVector extends Thread {
 
     private int[] vector;
@@ -16,6 +20,10 @@ public class FilVector extends Thread {
         this.idThread = 0;
 
     }
+
+
+    // El métode runn() del fil es sobrescriu en un bucle for on el vector en la posició i s'iniciarà
+    // i acabarà quan el valor de la posició i sigui inferior o igual que la posició final de la geometria en el espai del vector.
 
     @Override
     public void run() {

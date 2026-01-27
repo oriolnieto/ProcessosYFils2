@@ -1,8 +1,10 @@
 package vectors_3;
 
-import java.sql.SQLOutput;
+
 import java.util.Random;
 import java.util.Scanner;
+
+
 
 public class vectors_3 {
 
