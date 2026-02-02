@@ -54,18 +54,22 @@ public class vectors_3 {
         // execució del fills
         for (int i=0; i<numFills; i++){
             int inici = index; // inici del fil
-            int fi = index + numFills; // final del fil
-            fils[i] = new FilVector(vector , index , fi , inici);
+            int fi = index + midaBloc; // final del fil
+            fils[i] = new FilVector(vector , index , fi , inici , i);
             fils[i].start();
             index = fi; // S'actualitza la nova posicio del fil anterior i s'executa el seguent
         }
 
         // Troba el valor maxim del fil executat
-        int MaximFilPrincipal = vector[index];
+        int MaximFilPrincipal = Integer.MIN_VALUE;
 
-        for (int i = index+1; i<nPosicions; i++){
-            if (MaximFilPrincipal > vector[i]) {
-                MaximFilPrincipal = vector[i];
+        if (index < nPosicions) {
+            MaximFilPrincipal = vector[index];
+
+            for (int i = index + 1; i < nPosicions; i++) {
+                if (MaximFilPrincipal < vector[i]) {
+                    MaximFilPrincipal = vector[i];
+                }
             }
         }
 
@@ -87,15 +91,17 @@ public class vectors_3 {
             }
         }
 
-        System.out.println("Valor màxim del vector: " + MaximFilPrincipal);
+        System.out.println("Valor màxim del vector: " + MaximFilSecundo);
 
         // el valor del guanyador no varia, el fil principal SEMPRE sera 0 ja que es el primer fil
+        // cap fil ha superat el màxim del fil principal, el guanyador és el fil principal
+        // en cas que no algun fil ha trobat un valor més gran i el guanyador compta amb l'id d'aquest fil
 
-        if (winner != -1) {
-            System.out.println("Aquest vector ha trobat el màxim final: " + winner); // el guanyador sempre serà 0, 0 es el fil principal
+        if (winner == -1) {
+            System.out.println("El vector principal ha trobat el màxim final"); // el guanyador sempre serà 0, 0 es el fil principal
 
         } else {
-            System.out.println("No s'ha trobat el màxim final");
+            System.out.println("El maxim l'ha trobat el fil amb aquest id: " + winner);
         }
 
     }

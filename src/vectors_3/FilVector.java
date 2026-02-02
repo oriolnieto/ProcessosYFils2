@@ -12,12 +12,12 @@ public class FilVector extends Thread {
     private int max;
     private int idThread;
 
-    public FilVector(int[] vector, int start, int end, int max) {
+    public FilVector(int[] vector, int start, int end, int max, int idThread) {
         this.vector = vector;
         this.start = start;
         this.end = end;
-        this.max = max;
-        this.idThread = 0;
+        this.max = Integer.MIN_VALUE;
+        this.idThread = idThread;
 
     }
 
@@ -27,7 +27,7 @@ public class FilVector extends Thread {
 
     @Override
     public void run() {
-        for (int i = start; i <= end; i++) {
+        for (int i = start; i < end; i++) {
            if (vector[i] > max) {
                 max= vector[i];
            }
@@ -60,7 +60,7 @@ public class FilVector extends Thread {
         return max;
     }
     public void setMax(int max) {
-        this.max = max;
+        this.max = Integer.MIN_VALUE;
     }
 
     public int getIdThread() {
